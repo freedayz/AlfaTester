@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public abstract class BaseObrazovka {
     public ArrayList<By> locatorList;
     public WebDriver localDriver;
-    public final int redirectWaitTimeout = 3000;
+    public final int redirectWaitTimeout = 2000;
 
     public BaseObrazovka(WebDriver driver) {
         this.locatorList = new ArrayList<>();

@@ -2,8 +2,10 @@ package sk.fomi.AlfaTester;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import sk.fomi.AlfaTester.Obrazovky.Login;
-import sk.fomi.AlfaTester.Obrazovky.VytvoreniePracovnejCesty;
+import sk.fomi.AlfaTester.Obrazovky.SpravaCisel.CislovaciPlanCreate;
+import sk.fomi.AlfaTester.Obrazovky.Frekvencie.FrekvencneListyCreate;
+import sk.fomi.AlfaTester.Obrazovky.Vseobecne.Login;
+import sk.fomi.AlfaTester.Obrazovky.PracovneCesty.PracovneCestyCreate;
 
 public class AlfaTester {
 
@@ -19,8 +21,26 @@ public class AlfaTester {
 
     public static void testPracovneCestyCreate() {
         try {
-            (new VytvoreniePracovnejCesty(driver)).test();
+            (new PracovneCestyCreate(driver)).test();
         } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void testCislovaciPlanCreate() {
+        try {
+            (new CislovaciPlanCreate(driver)).test();
+        }
+        catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void testFrekvencneListyCreate() {
+        try {
+            (new FrekvencneListyCreate(driver)).test();
+        }
+        catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }

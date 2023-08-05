@@ -1,7 +1,8 @@
-package sk.fomi.AlfaTester.Obrazovky;
+package sk.fomi.AlfaTester.Obrazovky.Vseobecne;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import sk.fomi.AlfaTester.Obrazovky.BaseObrazovka;
 
 public class Login extends BaseObrazovka {
     private final String url = "https://dev.alfabase.sk/sps_int/";

@@ -1,13 +1,14 @@
-package sk.fomi.AlfaTester.Obrazovky;
+package sk.fomi.AlfaTester.Obrazovky.PracovneCesty;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
+import sk.fomi.AlfaTester.Obrazovky.BaseObrazovka;
 
-public class VytvoreniePracovnejCesty extends BaseObrazovka {
+public class PracovneCestyCreate extends BaseObrazovka {
     private final String url = "https://dev.alfabase.sk/sps_int/pracovne-cesty/pracovne-cesty";
 
-    public VytvoreniePracovnejCesty(WebDriver driver) {
+    public PracovneCestyCreate(WebDriver driver) {
         super(driver);
     }
 
