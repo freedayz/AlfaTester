@@ -11,6 +11,7 @@ public class VytvoreniePracovnejCesty extends BaseObrazovka {
         super(driver);
     }
 
+    @Override
     public void test() throws InterruptedException {
         Thread.sleep(redirectWaitTimeout);
         localDriver.get(url);

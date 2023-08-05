@@ -20,6 +20,8 @@ public abstract class BaseObrazovka {
         this.localDriver = driver;
     }
 
+    public abstract void test() throws InterruptedException;
+
     public WebElement fluentFindElement(By locator) {
         Wait<WebDriver> wait = new FluentWait<WebDriver>(localDriver)
                 .withTimeout(Duration.ofSeconds(30))

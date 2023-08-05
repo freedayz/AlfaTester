@@ -10,6 +10,7 @@ public class Login extends BaseObrazovka {
         super(driver);
     }
 
+    @Override
     public void test() throws InterruptedException {
         localDriver.get(url);
 
