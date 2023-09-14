@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import sk.fomi.AlfaTester.Obrazovky.SpravaCisel.CislovaciPlanCreate;
 import sk.fomi.AlfaTester.Obrazovky.Frekvencie.FrekvencneListyCreate;
+import sk.fomi.AlfaTester.Obrazovky.VerejneKonzultacie.NarodneKonzultacieCreate;
 import sk.fomi.AlfaTester.Obrazovky.Vseobecne.Login;
 import sk.fomi.AlfaTester.Obrazovky.PracovneCesty.PracovneCestyCreate;
 
@@ -39,6 +40,18 @@ public class AlfaTester {
     public static void testFrekvencneListyCreate() {
         try {
             (new FrekvencneListyCreate(driver)).test();
+        }
+        catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void testNarodneKonzultacieCreate() {
+        try {
+            NarodneKonzultacieCreate obj = new NarodneKonzultacieCreate(driver);
+
+            obj.test();
+            obj.subchildsCreate(2);
         }
         catch (InterruptedException e) {
             throw new RuntimeException(e);

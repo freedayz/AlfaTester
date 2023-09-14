@@ -15,6 +15,8 @@ public abstract class BaseObrazovka {
     public WebDriver localDriver;
     public final int redirectWaitTimeout = 2000;
 
+    public final String primaryUrl = "https://test.alfabase.sk/sps_int";
+
     public BaseObrazovka(WebDriver driver) {
         this.locatorList = new ArrayList<>();
         this.localDriver = driver;
@@ -23,7 +25,7 @@ public abstract class BaseObrazovka {
     public abstract void test() throws InterruptedException;
 
     public WebElement fluentFindElement(By locator) {
-        Wait<WebDriver> wait = new FluentWait<WebDriver>(localDriver)
+        Wait<WebDriver> wait = new FluentWait<>(localDriver)
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofSeconds(5))
                 .ignoring(NoSuchElementException.class);

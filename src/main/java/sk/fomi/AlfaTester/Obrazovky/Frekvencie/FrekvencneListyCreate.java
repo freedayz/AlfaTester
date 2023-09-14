@@ -6,8 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 import sk.fomi.AlfaTester.Obrazovky.BaseObrazovka;
 
 public class FrekvencneListyCreate extends BaseObrazovka {
-    private final String url = "https://dev.alfabase.sk/sps_int/sprava-frekvencneho-spektra" +
-            "/databazy/databaza-frekvencnych-listov";
+    private final String url = primaryUrl + "/sprava-frekvencneho-spektra/databazy/databaza-frekvencnych-listov";
 
     public FrekvencneListyCreate(WebDriver driver) {
         super(driver);

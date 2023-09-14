@@ -9,7 +9,7 @@ import sk.fomi.AlfaTester.TestData.TestData;
 import java.util.ArrayList;
 
 public class CislovaciPlanCreate extends BaseObrazovka {
-    private final String url = "https://dev.alfabase.sk/sps_int/sprava-cisel/cislovaci-plan";
+    private final String url = primaryUrl + "/sprava-cisel/cislovaci-plan";
 
     public CislovaciPlanCreate(WebDriver driver) {
         super(driver);

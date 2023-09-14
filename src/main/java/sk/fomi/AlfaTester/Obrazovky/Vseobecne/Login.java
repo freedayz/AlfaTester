@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import sk.fomi.AlfaTester.Obrazovky.BaseObrazovka;
 
 public class Login extends BaseObrazovka {
-    private final String url = "https://dev.alfabase.sk/sps_int/";
 
     public Login(WebDriver driver) {
         super(driver);
@@ -13,10 +12,10 @@ public class Login extends BaseObrazovka {
 
     @Override
     public void test() throws InterruptedException {
-        localDriver.get(url);
+        localDriver.get(primaryUrl);
 
-        fluentFindElement(By.xpath("/html/body/app-root/spisova-sluzba-ml-header" +
-                "/header/div/div[2]/div/div/div[3]/div/div/div/button")
+        fluentFindElement(By.xpath("/html/body/app-root/div[1]" +
+                "/spisova-sluzba-ml-header/div/div/div/div[2]/button")
         ).click();
 
         fluentFindElement(By.id("username"))

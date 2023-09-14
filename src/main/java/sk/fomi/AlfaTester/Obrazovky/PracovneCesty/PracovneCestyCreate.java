@@ -2,11 +2,14 @@ package sk.fomi.AlfaTester.Obrazovky.PracovneCesty;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import sk.fomi.AlfaTester.Obrazovky.BaseObrazovka;
 
 public class PracovneCestyCreate extends BaseObrazovka {
-    private final String url = "https://dev.alfabase.sk/sps_int/pracovne-cesty/pracovne-cesty";
+    private final String url = primaryUrl + "/pracovne-cesty/pracovne-cesty";
 
     public PracovneCestyCreate(WebDriver driver) {
         super(driver);
@@ -46,5 +49,13 @@ public class PracovneCestyCreate extends BaseObrazovka {
 
         fluentFindElement(By.id("pouzivatelId-1displayName"))
                 .sendKeys("meno_priezvisko");
+
+        Actions action = new Actions(localDriver);
+        WebElement submit = fluentFindElement(By.xpath("/html/body/app-root/div/div[2]/div/app-create/div[2]" +
+                "/div/div[2]/div/div/alf-button[3]/button"));
+        action.doubleClick(submit).build().perform();
+
+
+        Thread.sleep(redirectWaitTimeout + 2000);
     }
 }
