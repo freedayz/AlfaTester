@@ -1,8 +1,8 @@
-package sk.fomi.AlfaTester.Obrazovky.Vseobecne;
+package sk.fomi.AlfaTester.obrazovky.sps_int.Vseobecne;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import sk.fomi.AlfaTester.Obrazovky.BaseObrazovka;
+import sk.fomi.AlfaTester.obrazovky.BaseObrazovka;
 
 public class Login extends BaseObrazovka {
 
@@ -14,17 +14,13 @@ public class Login extends BaseObrazovka {
     public void test() throws InterruptedException {
         localDriver.get(primaryUrl);
 
-        fluentFindElement(By.xpath("/html/body/app-root/div[1]" +
-                "/spisova-sluzba-ml-header/div/div/div/div[2]/button")
-        ).click();
-
-        fluentFindElement(By.id("username"))
+        getElement(By.id("username"))
                 .sendKeys("juan.gonzales");
 
-        fluentFindElement(By.id("password"))
+        getElement(By.id("password"))
                 .sendKeys("spsext123");
 
-        fluentFindElement(By.id("kc-login"))
+        getElement(By.id("kc-login"))
                 .submit();
     }
 }

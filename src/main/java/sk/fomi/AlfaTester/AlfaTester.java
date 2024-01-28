@@ -1,60 +1,30 @@
 package sk.fomi.AlfaTester;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import sk.fomi.AlfaTester.Obrazovky.SpravaCisel.CislovaciPlanCreate;
-import sk.fomi.AlfaTester.Obrazovky.Frekvencie.FrekvencneListyCreate;
-import sk.fomi.AlfaTester.Obrazovky.VerejneKonzultacie.NarodneKonzultacieCreate;
-import sk.fomi.AlfaTester.Obrazovky.Vseobecne.Login;
-import sk.fomi.AlfaTester.Obrazovky.PracovneCesty.PracovneCestyCreate;
+import sk.fomi.AlfaTester.obrazovky.BaseObrazovka;
 
 public class AlfaTester {
 
-    private static final WebDriver driver = new ChromeDriver();
+    private static AlfaTester instance;
 
-    public static void testLogin() {
+    private AlfaTester() {}
+
+    public static AlfaTester getInstance() {
+        if (instance == null) {
+            instance = new AlfaTester();
+        }
+
+        return instance;
+    }
+
+    public AlfaTester test(BaseObrazovka... objects) {
         try {
-            (new Login(driver)).test();
+            for (BaseObrazovka o : objects) {
+                o.test();
+            }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-    }
 
-    public static void testPracovneCestyCreate() {
-        try {
-            (new PracovneCestyCreate(driver)).test();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public static void testCislovaciPlanCreate() {
-        try {
-            (new CislovaciPlanCreate(driver)).test();
-        }
-        catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public static void testFrekvencneListyCreate() {
-        try {
-            (new FrekvencneListyCreate(driver)).test();
-        }
-        catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public static void testNarodneKonzultacieCreate() {
-        try {
-            NarodneKonzultacieCreate obj = new NarodneKonzultacieCreate(driver);
-
-            obj.test();
-            obj.subchildsCreate(2);
-        }
-        catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        return this;
     }
 }
