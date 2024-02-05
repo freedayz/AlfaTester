@@ -1,13 +1,17 @@
-package sk.fomi.AlfaTester.obrazovky.sps_int.Vseobecne;
+package sk.fomi.AlfaTester.Obrazovky.sps_int.Vseobecne;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import sk.fomi.AlfaTester.obrazovky.BaseObrazovka;
+import sk.fomi.AlfaTester.Obrazovky.BaseObrazovka;
 
 public class Login extends BaseObrazovka {
+    private String username;
+    private String password;
 
-    public Login(WebDriver driver) {
+    public Login(WebDriver driver, String username, String password) {
         super(driver);
+        this.username = username;
+        this.password = password;
     }
 
     @Override
@@ -15,10 +19,10 @@ public class Login extends BaseObrazovka {
         localDriver.get(primaryUrl);
 
         getElement(By.id("username"))
-                .sendKeys("juan.gonzales");
+                .sendKeys(username);
 
         getElement(By.id("password"))
-                .sendKeys("spsext123");
+                .sendKeys(password);
 
         getElement(By.id("kc-login"))
                 .submit();

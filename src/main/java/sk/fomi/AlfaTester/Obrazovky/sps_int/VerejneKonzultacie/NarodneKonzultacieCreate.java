@@ -1,10 +1,10 @@
-package sk.fomi.AlfaTester.obrazovky.sps_int.VerejneKonzultacie;
+package sk.fomi.AlfaTester.Obrazovky.sps_int.VerejneKonzultacie;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import sk.fomi.AlfaTester.TestData.RandomDataEngine;
 import sk.fomi.AlfaTester.TestData.VerejneKonzultacie.NarodneKonzultacie.NarodneKonzultacieCreateData;
-import sk.fomi.AlfaTester.obrazovky.BaseObrazovka;
+import sk.fomi.AlfaTester.Obrazovky.BaseObrazovka;
 
 public class NarodneKonzultacieCreate extends BaseObrazovka {
     private final String url = primaryUrl + "/verejne-konzultacie/narodne-verejne-konzultacie";

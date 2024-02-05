@@ -1,11 +1,12 @@
-package sk.fomi.AlfaTester.obrazovky.sps_int.PracovneCesty;
+package sk.fomi.AlfaTester.Obrazovky.sps_int.PracovneCesty;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import sk.fomi.AlfaTester.obrazovky.BaseObrazovka;
+import sk.fomi.AlfaTester.TestData.RandomDataEngine;
+import sk.fomi.AlfaTester.Obrazovky.BaseObrazovka;
 
 public class PracovneCestyCreate extends BaseObrazovka {
     private final String url = primaryUrl + "/pracovne-cesty/pracovne-cesty";
@@ -28,11 +29,11 @@ public class PracovneCestyCreate extends BaseObrazovka {
 
         getElement(By.xpath("//*[@id=\"right\"]/div/app-create/div[3]/div[2]" +
                 "/alf-datetime-picker/div/div/app-date-time-picker/div/input")
-        ).sendKeys("10.08.2023 0:00:00");
+        ).sendKeys(RandomDataEngine.getInstance().getDate().getDatumOd());
 
         getElement(By.xpath("//*[@id=\"right\"]/div/app-create/div[3]/div[3]" +
                 "/alf-datetime-picker/div/div/app-date-time-picker/div/input")
-        ).sendKeys("12.08.2023 0:00:00");
+        ).sendKeys(RandomDataEngine.getInstance().getDate().getDatumDo());
 
         getElement(By.id("miestoKonania"))
                 .sendKeys("Vieden");

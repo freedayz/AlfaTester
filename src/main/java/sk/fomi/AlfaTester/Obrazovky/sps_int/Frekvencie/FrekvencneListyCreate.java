@@ -1,9 +1,9 @@
-package sk.fomi.AlfaTester.obrazovky.sps_int.Frekvencie;
+package sk.fomi.AlfaTester.Obrazovky.sps_int.Frekvencie;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
-import sk.fomi.AlfaTester.obrazovky.BaseObrazovka;
+import sk.fomi.AlfaTester.Obrazovky.BaseObrazovka;
 
 public class FrekvencneListyCreate extends BaseObrazovka {
     private final String url = primaryUrl + "/sprava-frekvencneho-spektra/databazy/databaza-frekvencnych-listov";

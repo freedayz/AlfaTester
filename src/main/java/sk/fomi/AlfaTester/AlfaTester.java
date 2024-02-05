@@ -1,6 +1,6 @@
 package sk.fomi.AlfaTester;
 
-import sk.fomi.AlfaTester.obrazovky.BaseObrazovka;
+import sk.fomi.AlfaTester.Obrazovky.BaseObrazovka;
 
 public class AlfaTester {
 
@@ -16,11 +16,10 @@ public class AlfaTester {
         return instance;
     }
 
-    public AlfaTester test(BaseObrazovka... objects) {
+    public AlfaTester test(BaseObrazovka obj) {
         try {
-            for (BaseObrazovka o : objects) {
-                o.test();
-            }
+            obj.test();
+
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

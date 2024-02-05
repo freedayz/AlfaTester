@@ -1,4 +1,4 @@
-package sk.fomi.AlfaTester.obrazovky;
+package sk.fomi.AlfaTester.Obrazovky;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -15,7 +15,7 @@ public abstract class BaseObrazovka {
     public WebDriver localDriver;
     public final int redirectWaitTimeout = 5000;
 
-    public final String primaryUrl = "https://dev.alfabase.sk/sps_int";
+    public final String primaryUrl = "https://tportal.esru.teleoff.gov.local/sps_int/";
 
     public BaseObrazovka(WebDriver driver) {
         this.locatorList = new ArrayList<>();

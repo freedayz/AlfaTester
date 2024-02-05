@@ -1,9 +1,9 @@
-package sk.fomi.AlfaTester.obrazovky.sps_ext.VerejneKonzultacie;
+package sk.fomi.AlfaTester.Obrazovky.EXT.VerejneKonzultacie;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
-import sk.fomi.AlfaTester.obrazovky.BaseObrazovka;
+import sk.fomi.AlfaTester.Obrazovky.BaseObrazovka;
 
 public class KonzultacneMiesto extends BaseObrazovka {
 

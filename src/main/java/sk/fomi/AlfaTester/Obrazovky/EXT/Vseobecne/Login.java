@@ -1,12 +1,12 @@
-package sk.fomi.AlfaTester.obrazovky.sps_ext.Vseobecne;
+package sk.fomi.AlfaTester.Obrazovky.EXT.Vseobecne;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import sk.fomi.AlfaTester.obrazovky.BaseObrazovka;
+import sk.fomi.AlfaTester.Obrazovky.BaseObrazovka;
 
 public class Login extends BaseObrazovka {
 
-    private final String url = "https://dev.alfabase.sk/sps_ext/konzultacne-miesto";
+    private final String url = "https://tportal-ext.esru.teleoff.gov.local/sps_ext/";
 
     public Login(WebDriver driver) {
         super(driver);
